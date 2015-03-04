@@ -1,4 +1,4 @@
 # config
 
-Ce repository contiens les fichiers de configuration de mon ordianteur portable
+Ce repository contiens les fichiers de configurations de mon ordinateur portable
 !
