@@ -37,6 +37,7 @@ alias lll='ls --color=auto -lh | less'
 # marre de se faire corriger par zsh ;)
 alias xs='cd'
 alias sl='ls'
+alias tree='tree -C'
 # mplayer en plein framme buffer ;)
 alias mplayerfb='mplayer -vo fbdev -vf scale=1024:768'
 # Un grep avec des couleurs :
