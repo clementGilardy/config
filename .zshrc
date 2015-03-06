@@ -31,8 +31,8 @@ autoload -U compinit && compinit
 #prompt adam2
  
 # Les alias marchent comme sous bash
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -lh'
+alias ls='ls -h --color=auto'
+alias ll='ls --color=auto -lah'
 alias lll='ls --color=auto -lh | less'
 # marre de se faire corriger par zsh ;)
 alias xs='cd'
