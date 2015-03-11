@@ -10,6 +10,7 @@ zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
 zstyle ':completion:*:sudo:*' command-path /usr/local/sbin /usr/local/bin \
                              /usr/sbin /usr/bin /sbin /bin /usr/X11R6/bin
+
 # Crée un cache des complétion possibles
 # très utile pour les complétion qui demandent beaucoup de temps
 # comme la recherche d'un paquet aptitude install moz<tab>
@@ -59,6 +60,13 @@ export TERM='xterm-256color'
 if [[ -r /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
+
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:/home/eternel/.gem/ruby/2.2.0/bin
 export PATH
+
+#zsh history search
+source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+zmodload zsh/terminfo
+bindkey "[A" history-substring-search-up
+bindkey "[B" history-substring-search-down
