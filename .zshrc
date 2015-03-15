@@ -70,3 +70,15 @@ source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring
 zmodload zsh/terminfo
 bindkey "[A" history-substring-search-up
 bindkey "[B" history-substring-search-down
+
+#case insensitive
+zstyle ':completion:*:cscomplete:*' group-name case-sensitive
+zstyle ':completion:*:complete:*' group-name case-insensitive
+zstyle ':completion:*' group-order case-sensitive case-insensitive
+zstyle ':completion:*:cscomplete:*:*' matcher-list ''
+zstyle ':completion:*:complete:*' matcher-list 'm:{a-z}={A-Z}'
+
+#zshenv
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
