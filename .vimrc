@@ -1,11 +1,5 @@
+source ~/.vim/colors/molokai.vim
 
-
-" .vimrc
-" See: http://vimdoc.sourceforge.net/htmldoc/options.html for details
-
-" For multi-byte character support (CJK support, for example):
-"set fileencodings=ucs-bom,utf-8,cp936,big5,euc-jp,euc-kr,gb18030,latin1
-       
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
@@ -75,10 +69,16 @@ set background=dark " When set to "dark", Vim will try to use colors that look
  
 set mouse=a         " Enable the use of the mouse.
 
+set encoding=utf-8
+
 nnoremap <F3> :NERDTreeTabsToggle<CR>
  
 filetype plugin indent on
-syntax on
+
+
+set bg=dark
+set laststatus=2
+set statusline=%<%f\ %h%m%r(%{fugitive#head()})%=(%l,%c%V)\ %P
 
 " Note: Skip initialization for vim-tiny or vim-small.
 if !1 | finish | endif
@@ -102,9 +102,14 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
 " coloration twig
 NeoBundle 'beyondwords/vim-twig'
+" vim powerline
+NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 " fyzzy file
 NeoBundle 'kien/ctrlp.vim'
-
+"colorscheme molokai
+NeoBundle 'tomasr/molokai'
+let g:molokai_original = 1
+"emmet
 let g:user_emmet_leader_key = '<c-e>'
 
 " My Bundles here:
@@ -113,10 +118,9 @@ let g:user_emmet_leader_key = '<c-e>'
 
 call neobundle#end()
 
-"Required:
-filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
 
+syntax on
