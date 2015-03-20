@@ -117,6 +117,8 @@ let g:molokai_original = 1
 "emmet
 let g:user_emmet_leader_key = '<c-e>'
 
+NeoBundle 'christoomey/vim-tmux-navigator'
+
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
