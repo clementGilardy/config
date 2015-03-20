@@ -5,6 +5,7 @@
 # _ / /_ ___) |  _  |  _ <| |___ 
 #(_)____|____/|_| |_|_| \_\\____|
 #
+
 # Complétion 
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
@@ -46,6 +47,10 @@ alias mplayerfb='mplayer -vo fbdev -vf scale=1024:768'
 export GREP_COLOR=31
 alias grep='grep --color=auto'
 alias xte='nohup xterm &' # xte lancera un xterm qui ne se fermera pas si on ferme le terminal
+#alias pour yaourt
+alias update='yaourt -Syua'
+alias tmux="TERM=screen-256color-bce tmux"
+
 # Pareil pour les variables d'environement :
 #export http_proxy="http://hostname:8080/"
 #export HTTP_PROXY=$http_proxy
@@ -54,12 +59,7 @@ export EDITOR=/usr/bin/vim
 
 plugin=(git vi-mode history-substring-search)
 fpath=(/etc/zsh-completions/src $fpath)
-ZSH_THEME="powerline"
-export TERM='xterm-256color'
 
-if [[ -r /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
-    source /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:/home/eternel/.gem/ruby/2.2.0/bin
@@ -78,7 +78,21 @@ zstyle ':completion:*' group-order case-sensitive case-insensitive
 zstyle ':completion:*:cscomplete:*:*' matcher-list ''
 zstyle ':completion:*:complete:*' matcher-list 'm:{a-z}={A-Z}'
 
+if [[ -r /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
+    source /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
+ZSH_THEME="powerline"
+
+export TERM='xterm-256color'
 #zshenv
 HISTFILE=~/.histfile
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=1000
+SAVEHIST=1000
+
+if [[ ! $TERM =~ linux ]]
+then
+   if [ -z $TMUX ]
+   then
+      exec tmux
+   fi
+fi

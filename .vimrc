@@ -43,7 +43,7 @@ set autoindent      " Copy indent from current line when starting a new line
                     " (typing <CR> in Insert mode or when using the "o" or "O"
                     " command).
  
-set textwidth=79    " Maximum width of text that is being inserted. A longer
+set textwidth=100    " Maximum width of text that is being inserted. A longer
                     " line will be broken after white space to get this width.
  
 set formatoptions=c,q,r,t " This is a sequence of letters which describes how
@@ -104,6 +104,11 @@ NeoBundle 'jistr/vim-nerdtree-tabs'
 NeoBundle 'beyondwords/vim-twig'
 " vim powerline
 NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" vim symfony2
+NeoBundle 'docteurklein/vim-symfony'
+let g:symfony_app_console_caller= "php"
+let g:symfony_app_console_path= "app/console"
+map <C-f> :execute ":!"g:symfony_enable_shell_cmd<CR>
 " fyzzy file
 NeoBundle 'kien/ctrlp.vim'
 "colorscheme molokai
@@ -122,5 +127,4 @@ call neobundle#end()
 " If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
 NeoBundleCheck
-
 syntax on
