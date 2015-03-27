@@ -100,6 +100,7 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
+NeoBundle '1995eaton/vim-better-css-completion'
 " coloration twig
 NeoBundle 'beyondwords/vim-twig'
 " vim powerline
