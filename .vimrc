@@ -100,7 +100,12 @@ NeoBundle 'Valloric/YouCompleteMe'
 NeoBundle 'mattn/emmet-vim'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'jistr/vim-nerdtree-tabs'
-NeoBundle '1995eaton/vim-better-css-completion'
+NeoBundle 'Raimondi/delimitMate'
+NeoBundle 'terryma/vim-multiple-cursors'
+" auto generation de code
+NeoBundle 'SirVer/ultisnips'
+NeoBundle 'honza/vim-snippets'
+let g:UltiSnipsExpandTrigger=","
 " coloration twig
 NeoBundle 'beyondwords/vim-twig'
 " vim powerline
