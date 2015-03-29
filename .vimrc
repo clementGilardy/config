@@ -1,5 +1,7 @@
 source ~/.vim/colors/molokai.vim
 
+set relativenumber
+
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
 set shiftwidth=4    " Number of spaces to use for each step of (auto)indent.
@@ -105,7 +107,7 @@ NeoBundle 'terryma/vim-multiple-cursors'
 " auto generation de code
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'honza/vim-snippets'
-let g:UltiSnipsExpandTrigger=","
+let g:UltiSnipsExpandTrigger="²"
 " coloration twig
 NeoBundle 'beyondwords/vim-twig'
 " vim powerline
@@ -117,7 +119,7 @@ let g:symfony_app_console_path= "app/console"
 map <C-f> :execute ":!"g:symfony_enable_shell_cmd<CR>
 " fyzzy file
 NeoBundle 'kien/ctrlp.vim'
-"colorscheme molokai
+colorscheme molokai
 NeoBundle 'tomasr/molokai'
 let g:molokai_original = 1
 "emmet
