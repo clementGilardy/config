@@ -112,6 +112,8 @@ let g:UltiSnipsExpandTrigger="²"
 NeoBundle 'beyondwords/vim-twig'
 " vim powerline
 NeoBundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" vim with git, just awesome !
+NeoBundle 'tpope/vim-fugitive'
 " vim symfony2
 NeoBundle 'docteurklein/vim-symfony'
 let g:symfony_app_console_caller= "php"
