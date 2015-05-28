@@ -24,6 +24,7 @@ Et pour finir il faut installer les Fonts de powerline
 yaourt -S oh-my-zsh-powerline-theme-git
 ```
 
+Attention : Ne pas oublier de lancer powerline-daemon au demarage
 ## VIM
 
 TODO

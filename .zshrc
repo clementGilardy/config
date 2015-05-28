@@ -27,7 +27,7 @@ zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s 
 zstyle ':completion:*' menu select=2
 # Correction des commandes
-#setopt correctall
+setopt correctall
  
 
 autoload -U compinit && compinit 
@@ -55,6 +55,7 @@ alias update='yaourt -Syua'
 alias tmux="TERM=screen-256color-bce tmux"
 alias transmission="transmission-qt"
 alias sailfish="~/Documents/SailfishOS/bin/qtcreator"
+alias rm='rm -rf'
 
 # Pareil pour les variables d'environement :
 #export http_proxy="http://hostname:8080/"
@@ -62,25 +63,22 @@ alias sailfish="~/Documents/SailfishOS/bin/qtcreator"
 # un VRAI éditeur de texte ;)
 export EDITOR=/usr/bin/vim
 
-plugin=(git vi-mode history-substring-search)
+plugins=(git vi-mode history-substring-search colorize colored-man django pip)
 fpath=(/etc/zsh-completions/src $fpath)
 
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:/home/eternel/.gem/ruby/2.2.0/bin
 export PATH
-export CDPATH="$HOME:/srv/http/"
 
 
-
+source $ZSH/oh-my-zsh.sh
 #zsh history search
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 zmodload zsh/terminfo
 bindkey "[A" history-substring-search-up
 bindkey "[B" history-substring-search-down
 
-#color syntax when we make an error
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #case insensitive
 zstyle ':completion:*:cscomplete:*' group-name case-sensitive
@@ -89,9 +87,13 @@ zstyle ':completion:*' group-order case-sensitive case-insensitive
 zstyle ':completion:*:cscomplete:*:*' matcher-list ''
 zstyle ':completion:*:complete:*' matcher-list 'm:{a-z}={A-Z}'
 
+export CDPATH="$HOME:/srv/http/"
+
 if [[ -r /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh ]]; then
     source /usr/lib/python3.4/site-packages/powerline/bindings/zsh/powerline.zsh
 fi
+#color syntax when we make an error
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_THEME="powerline"
 
 export TERM='xterm-256color'
