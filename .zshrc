@@ -6,6 +6,8 @@
 #(_)____|____/|_| |_|_| \_\\____|
 #
 
+ZSH=/usr/share/oh-my-zsh/
+
 # Complétion 
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%BSorry, no matches for: %d%b'
@@ -20,17 +22,18 @@ zstyle ':completion:*' cache-path ~/.zsh_cache
 # des couleurs pour la complétion
 # faites un kill -9 <tab><tab> pour voir :)
 zmodload zsh/complist
-setopt extendedglob
+setopt EXTENDED_GLOB 
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=36=31"
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s 
 zstyle ':completion:*' menu select=2
 # Correction des commandes
-setopt correctall
+#setopt correctall
  
-# Un petit prompt sympa
+
 autoload -U compinit && compinit 
 #promptinit
 #prompt adam2
+alias vi='vim'
  
 # Les alias marchent comme sous bash
 alias ls='ls -h --color=auto'
@@ -50,6 +53,8 @@ alias xte='nohup xterm &' # xte lancera un xterm qui ne se fermera pas si on fer
 #alias pour yaourt
 alias update='yaourt -Syua'
 alias tmux="TERM=screen-256color-bce tmux"
+alias transmission="transmission-qt"
+alias sailfish="~/Documents/SailfishOS/bin/qtcreator"
 
 # Pareil pour les variables d'environement :
 #export http_proxy="http://hostname:8080/"
@@ -64,12 +69,18 @@ fpath=(/etc/zsh-completions/src $fpath)
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 PATH=$PATH:/home/eternel/.gem/ruby/2.2.0/bin
 export PATH
+export CDPATH="$HOME:/srv/http/"
+
+
 
 #zsh history search
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 zmodload zsh/terminfo
 bindkey "[A" history-substring-search-up
 bindkey "[B" history-substring-search-down
+
+#color syntax when we make an error
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #case insensitive
 zstyle ':completion:*:cscomplete:*' group-name case-sensitive
@@ -89,10 +100,11 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+typeset -U path cdpath fpath
 if [[ ! $TERM =~ linux ]]
 then
    if [ -z $TMUX ]
    then
-      exec tmux
+       exec tmux
    fi
 fi

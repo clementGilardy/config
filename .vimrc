@@ -1,6 +1,5 @@
-source ~/.vim/colors/molokai.vim
+source ~/.vim/bundle/molokai/colors/molokai.vim
 
-set relativenumber
 
 set tabstop=4       " Number of spaces that a <Tab> in the file counts for.
  
@@ -128,6 +127,9 @@ let g:molokai_original = 1
 let g:user_emmet_leader_key = '<c-e>'
 
 NeoBundle 'christoomey/vim-tmux-navigator'
+
+" c++ bundlec ompletion
+NeoBundle 'OmniCppComplete'
 
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
